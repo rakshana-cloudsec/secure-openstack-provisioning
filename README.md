@@ -18,6 +18,7 @@ Organizations often face delays and security risks due to manual provisioning of
 - **Ubuntu Server (Virtual Lab Environment)**
 - **VirtualBox / VMware / KVM** (for testing)
 - **Bash Scripts** (for automation)
+- **Django, HTML/CSS, Bootstrap, JavaScript** (for web development)
 
 ---
 
