@@ -1,1 +1,23 @@
-# Sample OpenStack provisioning script
+# sample_provisioning.py
+# Simple OpenStack SDK example: List all compute instances (VMs)
+
+from openstack import connection
+
+# Replace these values with your OpenStack credentials
+auth_args = {
+    'auth_url': 'http://your-openstack-auth-url:5000/v3',
+    'project_name': 'your_project_name',
+    'username': 'your_username',
+    'password': 'your_password',
+    'user_domain_id': 'default',
+    'project_domain_id': 'default',
+}
+
+def list_servers():
+    conn = connection.Connection(**auth_args)
+    print("Listing all servers:")
+    for server in conn.compute.servers():
+        print(f"- {server.name} (Status: {server.status})")
+
+if __name__ == '__main__':
+    list_servers()
