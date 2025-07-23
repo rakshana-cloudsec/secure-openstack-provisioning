@@ -1,0 +1,15 @@
+# sample_policy.yaml
+# Sample Role-Based Access Control policy template
+
+rules:
+  admin:
+    - allow: "*"
+  developer:
+    - allow:
+        - compute:create
+        - compute:delete
+        - volume:create
+  analyst:
+    - allow:
+        - compute:list
+        - volume:list
