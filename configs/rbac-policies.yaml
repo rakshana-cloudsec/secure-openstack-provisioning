@@ -1,0 +1,25 @@
+# ------------------------------------------------------------
+# RBAC Policies Configuration for OpenStack
+# Author: Rakshana Kannaya Muralidharan
+# Purpose: Defines roles and permissions for secure provisioning
+# ------------------------------------------------------------
+
+rbac_policies:
+  - project: cloud-secure-project
+    users:
+      - name: admin-user
+        role: admin
+        description: "Full access to manage resources (restricted to admins only)."
+
+      - name: dev-user
+        role: member
+        description: "Can create and manage VMs within project scope."
+
+      - name: auditor-user
+        role: reader
+        description: "Read-only access for compliance/audit purposes."
+
+# Notes:
+# - Admin role should be tightly controlled (least privilege principle).
+# - Member role allows day-to-day provisioning with security group restrictions.
+# - Reader role is for audit teams (no changes, only visibility).
