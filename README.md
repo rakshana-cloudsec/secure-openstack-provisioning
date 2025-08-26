@@ -1,52 +1,88 @@
-# 🛡️ Secure Cloud Resource Provisioning Using OpenStack
+# ☁️ Secure OpenStack VM Provisioning with RBAC
 
-This project is a capstone implementation of a **self-service portal** that automates **virtual machine (VM)** and **volume provisioning** using **OpenStack APIs**, with integrated **role-based access control (RBAC)** to enhance cloud infrastructure security.
-
----
-
-## 📌 Project Overview
-
-Organizations often face delays and security risks due to manual provisioning of cloud resources. This project solves that by providing a **secure, automated provisioning system** for virtualized resources using OpenStack.
+![OpenStack](https://img.shields.io/badge/OpenStack-Automation-red)
+![Security](https://img.shields.io/badge/Focus-Secure%20Provisioning-critical)
+![RBAC](https://img.shields.io/badge/Access-Control-RBAC-blue)
 
 ---
 
-## 🔧 Technologies & Tools Used
+## 🔒 Overview
+This project automates **secure VM provisioning on OpenStack** while enforcing:
+- Role-Based Access Control (RBAC)
+- Security groups & firewall rules
+- Encrypted network configurations
 
-- **OpenStack** (Nova, Cinder, Keystone)
-- **Python** (OpenStack SDK)
-- **RBAC Policy Management**
-- **Ubuntu Server (Virtual Lab Environment)**
-- **VirtualBox / VMware / KVM** (for testing)
-- **Bash Scripts** (for automation)
-- **Django, HTML/CSS, Bootstrap, JavaScript** (for web development)
+The goal is to provision cloud workloads in **a secure, repeatable, and auditable way**, reducing risks from misconfigurations.
 
 ---
 
-## 🧩 Features
-
-- 🔒 **Role-Based Access Control**  
-  Assigns resource provisioning permissions based on user roles (e.g., Admin, Developer, Analyst).
-
-- ⚙️ **Automated VM & Volume Provisioning**  
-  Users can deploy compute instances and attach volumes through a self-service portal.
-
-- 🛠️ **Secure Execution Workflow**  
-  Each action is logged and validated against pre-defined access policies.
-
-- 🧪 **Isolated Testing Environment**  
-  Deployed in a secure, sandboxed OpenStack testbed to simulate real-world multi-user access.
+## ⚙️ Features
+- Automated VM creation with secure defaults  
+- **RBAC policies** applied per user/project  
+- **Security groups**: only required ports allowed (SSH, HTTPS)  
+- **Logging & auditability** of provisioning actions  
+- Configurable via YAML/JSON files  
 
 ---
 
-## 🚀 Architecture
+## 📋 Prerequisites
+- OpenStack environment (Horizon or CLI access)  
+- Python `openstack` CLI installed  
+- User account with provisioning rights  
+- Git + Bash  
 
-```plaintext
-User Request (Web UI / CLI)
-        ↓
-Authentication (Keystone + RBAC)
-        ↓
-Provisioning API Call (Python SDK)
-        ↓
-Resource Creation (Nova / Cinder)
-        ↓
-Access Logged and Tracked
+---
+
+## 🚀 Usage
+Clone this repository:
+```bash
+git clone https://github.com/rakshana-cloudsec/secure-openstack-provisioning.git
+cd secure-openstack-provisioning
+
+Provision a VM with secure defaults:
+bash provision-vm.sh
+
+Apply RBAC policies:
+openstack role add --user <user> --project <project> <role>
+
+Apply security groups:
+openstack security group rule create --proto tcp --dst-port 22:22 default
+```
+---
+## 📂 Project Structure
+secure-openstack-provisioning/
+├── provision-vm.sh
+├── configs/
+│ ├── security-groups.yaml
+│ └── rbac-policies.yaml
+├── docs/
+│ └── security-report.md
+└── images/
+
+yaml
+Copy
+Edit
+
+---
+
+## 📘 Documentation
+See [docs/security-report.md](./docs/security-report.md) for:
+- Security design principles  
+- RBAC model used  
+- Compliance references (CIS, ISO, NIST)  
+- Safe deployment guidelines  
+
+---
+
+## 🔮 Future Enhancements
+- Integrate with **Terraform/Ansible** for IaC scalability  
+- Add **Key Vault / Secrets Manager** integration  
+- Extend to **multi-cloud provisioning** (AWS/Azure)  
+
+---
+
+## 👤 Author
+**Rakshana Kannaya Muralidharan**  
+Master of Cybersecurity | Cloud Security & Linux Hardening Enthusiast  
+
+🔗 [GitHub](https://github.com/rakshana-cloudsec) • [LinkedIn](https://www.linkedin.com/in/rakshana-muralidharan/)
