@@ -1,9 +1,5 @@
 # ☁️ Secure OpenStack VM Provisioning with RBAC
 
-![OpenStack](https://img.shields.io/badge/OpenStack-Automation-red)
-![Security](https://img.shields.io/badge/Focus-Secure%20Provisioning-critical)
-![RBAC](https://img.shields.io/badge/Access-Control-RBAC-blue)
-
 ---
 
 ## 🔒 Overview
