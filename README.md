@@ -46,14 +46,14 @@ openstack security group rule create --proto tcp --dst-port 22:22 default
 ```
 ---
 ## 📂 Project Structure
-secure-openstack-provisioning/
-├── provision-vm.sh
-├── configs/
-│ ├── security-groups.yaml
-│ └── rbac-policies.yaml
-├── docs/
-│ └── security-report.md
-└── images/
+- secure-openstack-provisioning/
+- ├── provision-vm.sh
+- ├── configs/
+- │ ├── security-groups.yaml
+- │ └── rbac-policies.yaml
+- ├── docs/
+- │ └── security-report.md
+- └── images/
 
 yaml
 Copy
