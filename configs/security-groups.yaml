@@ -1,0 +1,26 @@
+# ------------------------------------------------------------
+# Security Groups Configuration for OpenStack
+# Author: Rakshana Kannaya Muralidharan
+# Purpose: Defines secure default access rules for provisioned VMs
+# ------------------------------------------------------------
+
+security_groups:
+  - name: secure-sg
+    description: "Secure default rules for cloud workloads"
+    rules:
+      # Allow SSH from anywhere (can restrict to specific IPs later)
+      - protocol: tcp
+        port_range: "22"
+        direction: ingress
+        remote_ip_prefix: "0.0.0.0/0"
+
+      # Allow HTTPS traffic
+      - protocol: tcp
+        port_range: "443"
+        direction: ingress
+        remote_ip_prefix: "0.0.0.0/0"
+
+      # Allow outbound traffic
+      - protocol: all
+        direction: egress
+        remote_ip_prefix: "0.0.0.0/0"
